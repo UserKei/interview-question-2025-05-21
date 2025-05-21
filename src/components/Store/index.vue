@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
-import stroe from '@/assets/store.png'
-import location from '@/assets/location.png'
+import stroe from '@/assets/icon/store.png'
+import location from '@/assets/icon/location.png'
 
 const storeStatistics = ref([
   { label: '已选门店', value: '23' },
