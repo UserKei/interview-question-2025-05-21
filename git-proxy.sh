@@ -37,3 +37,7 @@ case "$1" in
     echo "用法: $0 {on|off|status}"
     ;;
 esac
+
+# ./git-proxy.sh on       # 开启代理
+# ./git-proxy.sh off      # 关闭代理
+# ./git-proxy.sh status   # 查看代理状态
