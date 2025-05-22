@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import stroe from '@/assets/icon/store.png'
 import location from '@/assets/icon/location.png'
+import rightTop from '@/assets/icon/right-top.png'
 
 const storeStatistics = ref([
   { label: '已选门店', value: '23' },
@@ -13,11 +14,11 @@ const storeStatistics = ref([
 </script>
 
 <template>
-  <el-card>
-    <template #header>
-      <span>圈选店人数</span>
-    </template>
-
+  <el-card class="content">
+    <span class="right-top">
+      圈选店人数
+      <img :src="rightTop" alt="" />
+    </span>
     <div>
       <img :src="stroe" alt="" />
       <span>店</span>
@@ -36,3 +37,20 @@ const storeStatistics = ref([
     </div>
   </el-card>
 </template>
+
+<style lang="scss">
+.content {
+  position: relative;
+  border-radius: 10px;
+
+  .right-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    background-color: rgba(112, 135, 250, 1);
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+}
+</style>
