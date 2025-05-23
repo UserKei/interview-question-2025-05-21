@@ -19,12 +19,17 @@ const storeStatistics = ref([
       圈选店人数
       <img :src="rightTop" alt="" />
     </span>
-    <div>
-      <img :src="stroe" alt="" />
-      <span>店</span>
 
-      <img :src="location" alt="" />
-      <span>主要区域：广州</span>
+    <div class="store-header">
+      <div class="store-info">
+        <img :src="stroe" alt="" class="store-icon" />
+        <span class="store-title">店</span>
+      </div>
+
+      <div class="location-info">
+        <img :src="location" alt="" />
+        <span>主要区域：广州</span>
+      </div>
     </div>
 
     <div>
@@ -51,6 +56,37 @@ const storeStatistics = ref([
     background-color: rgba(112, 135, 250, 1);
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
+  }
+
+  .store-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .store-info {
+      display: flex;
+      align-items: center;
+
+      .store-icon {
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+      }
+
+      .store-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .store-stats {
+    display: flex;
+
+    .stat-item {
+      margin: 10px;
+    }
   }
 }
 </style>
