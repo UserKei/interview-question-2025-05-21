@@ -7,9 +7,9 @@ import rightTop from '@/assets/icon/right-top.png'
 const storeStatistics = ref([
   { label: '已选门店', value: '23' },
   { label: '活跃会员数', value: '232,300' },
-  { label: '平均月销售额', value: '¥222,423' },
+  { label: '平均月销售额', value: '¥ 222,423' },
   { label: '平均售罄率', value: '45%' },
-  { label: '客单价', value: '¥34,544' },
+  { label: '客单价', value: '¥ 34,544' },
 ])
 </script>
 
@@ -24,10 +24,11 @@ const storeStatistics = ref([
       <div class="store-info">
         <img :src="stroe" alt="" class="store-icon" />
         <span class="store-title">店</span>
+        <span class="store-subtitle">选择门店，圈定人货范围，按店开展营销</span>
       </div>
 
       <div class="location-info">
-        <img :src="location" alt="" />
+        <img :src="location" alt="" class="location-icon" />
         <span>主要区域：广州</span>
       </div>
     </div>
@@ -38,6 +39,7 @@ const storeStatistics = ref([
           <div class="label">{{ item.label }}</div>
           <div class="value">{{ item.value }}</div>
         </div>
+        <el-button round>导入门店</el-button>
       </div>
     </div>
   </el-card>
@@ -59,9 +61,23 @@ const storeStatistics = ref([
   }
 
   .store-header {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-between;
+
+    .location-info {
+      // margin-top: 34px;
+      // margin-left: 196px;
+      left: 0px;
+      top: 34px;
+      // position: absolute;
+
+      .location-icon {
+        width: 20px;
+        height: 20px;
+      }
+    }
 
     .store-info {
       display: flex;
@@ -78,14 +94,58 @@ const storeStatistics = ref([
         font-weight: bold;
         margin-right: 8px;
       }
+
+      .store-subtitle {
+        font-size: 16px;
+        position: relative;
+        // display: inline-block;
+        z-index: 1;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 40%;
+          background-color: rgba(112, 135, 250, 0.3);
+          z-index: -1;
+        }
+      }
     }
   }
 
   .store-stats {
     display: flex;
+    justify-content: space-between;
 
     .stat-item {
-      margin: 10px;
+      max-width: 70%;
+      // display: space-between;
+
+      .lable {
+        margin-top: 10px;
+
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        line-height: 22.4px;
+        color: rgba(10, 31, 55, 0.6);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .value {
+        margin-top: 10px;
+
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        line-height: 32px;
+        color: rgba(0, 0, 0, 0.9);
+        text-align: left;
+        vertical-align: top;
+      }
     }
   }
 }
